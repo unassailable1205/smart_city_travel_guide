@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 200 98% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 262 80% 63%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .city-card {
+    @apply relative overflow-hidden rounded-lg transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .city-card-img {
+    @apply h-full w-full object-cover transition-transform duration-500 hover:scale-110;
+  }
+  
+  .city-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end;
+  }
+  
+  .page-header {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4;
+  }
+  
+  .section-header {
+    @apply text-xl md:text-2xl font-display font-semibold text-foreground mb-3;
+  }
+  
+  .ai-suggestion {
+    @apply border border-cityTeal/30 bg-cityTeal/5 p-4 rounded-md relative;
+  }
+  
+  .ai-suggestion::before {
+    content: "AI";
+    @apply absolute top-0 right-0 bg-cityTeal text-white text-xs px-2 py-0.5 rounded-bl rounded-tr font-medium;
+  }
+}
